@@ -8,7 +8,7 @@ class CuerpoEjercitoController extends Controller
 {
     //
     public function cuerpoejercitoM(){
-
+        
     }
 
     public function cuerpoejercitoM2(){
