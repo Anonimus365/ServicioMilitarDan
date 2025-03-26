@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Army Corps</title>
+    <title>Document</title>
 </head>
 
 <style>
-    body {
+
+/* Estilos generales */
+body {
     display: flex;
     flex-direction: column;
     height: 100vh;
     align-items: center;
     justify-content: center;
-    background-color: #DFF6FF; /* Celeste pastel */
+    background-color: #171717; /* Negro con tono más suave */
     font-size: 18px;
     font-weight: 600;
     font-family: Arial, sans-serif;
-    color: #333333; /* Negro suave */
+    color: #fff; /* Color del texto */
     margin: 0;
 }
 
@@ -29,27 +31,18 @@
     flex-direction: column;
     padding: 25px;
     border-radius: 12px;
-    background: #A9D6E5; /* Celeste más oscuro */
-    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.3);
+    background: #1e1e1e; /* Gris oscuro */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     width: 320px;
     text-align: center;
 }
 
 /* Título */
-.container .title {
+.container p {
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 15px;
-    color: #FF7F50; /* Coral cálido */
-}
-
-/* Párrafo */
-.container .paragraph {
-    font-size: 15px;
-    margin-bottom: 10px;
-    width: 100%;
-    text-align: left;
-    color: #555555; /* Gris medio */
+    color: #00aaff;
 }
 
 /* Estilo del formulario */
@@ -63,10 +56,10 @@ form {
 .container input {
     margin-bottom: 15px;
     padding: 10px;
-    border: 1px solid #FF7F50; /* Coral */
+    border: 1px solid #444;
     border-radius: 6px;
-    background: #F5F5F5; /* Gris claro */
-    color: #333333;
+    background: #262626;
+    color: #fff;
     outline: none;
     font-size: 16px;
     transition: all 0.3s ease;
@@ -74,15 +67,15 @@ form {
 
 /* Efecto al enfocar los inputs */
 .container input:focus {
-    border-color: #FF7F50;
-    box-shadow: 0 0 8px rgba(255, 127, 80, 0.5);
+    border-color: #00aaff;
+    box-shadow: 0 0 8px rgba(0, 170, 255, 0.5);
 }
 
 /* Botón */
 .container button {
     border: none;
     border-radius: 6px;
-    background: #FF7F50; /* Coral */
+    background: #00aaff;
     padding: 10px;
     font-size: 18px;
     font-weight: 600;
@@ -93,7 +86,7 @@ form {
 
 /* Efecto hover en botón */
 .container button:hover {
-    background: #E66A3D; /* Coral más oscuro */
+    background: #0088cc;
     transform: scale(1.05);
 }
 
@@ -102,7 +95,7 @@ form {
     transform: scale(0.98);
 }
 
-footer {
+footer{
     position: fixed;
     bottom: 0;
 }
@@ -110,12 +103,13 @@ footer {
 
 <body>
     <div class="container">
-        <p class="title">Army Corps form</p>
+        <p>Barracks form</p>
 
-        <p class="paragraph">Enter in the army corps's name:</p>
-        <form action="{{route('corp.saved')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('barrack.saved')}}" method="POST" enctype="multipart/form-data">
+
             @csrf
-            <input type="text" name="designation" placeholder="Designation..." required>
+            <input type="text" name="name" placeholder="barrack name..." required>
+            <input type="text" name="location" placeholder="barrack location..." required>
             <button type="submit">send</button>
         </form>
     </div>

@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Army Corps</title>
+    <title>Companies Form</title>
 </head>
 
 <style>
-    body {
+
+/* Estilos generales */
+body {
     display: flex;
     flex-direction: column;
     height: 100vh;
     align-items: center;
     justify-content: center;
-    background-color: #DFF6FF; /* Celeste pastel */
+    background-color: #FAF3E0; /* Beige claro */
     font-size: 18px;
     font-weight: 600;
     font-family: Arial, sans-serif;
@@ -29,7 +31,7 @@
     flex-direction: column;
     padding: 25px;
     border-radius: 12px;
-    background: #A9D6E5; /* Celeste más oscuro */
+    background: #E3C6A5  ;
     box-shadow: 0 10px 16px rgba(0, 0, 0, 0.3);
     width: 320px;
     text-align: center;
@@ -40,7 +42,7 @@
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 15px;
-    color: #FF7F50; /* Coral cálido */
+    color: #D17B0F; /* Naranja cálido */
 }
 
 /* Párrafo */
@@ -63,10 +65,10 @@ form {
 .container input {
     margin-bottom: 15px;
     padding: 10px;
-    border: 1px solid #FF7F50; /* Coral */
+    border: 1px solid #D17B0F; /* Naranja cálido */
     border-radius: 6px;
-    background: #F5F5F5; /* Gris claro */
-    color: #333333;
+    background: #FAF3E0; /* Gris oscuro pero no tan fuerte */
+    color: #fff;
     outline: none;
     font-size: 16px;
     transition: all 0.3s ease;
@@ -74,15 +76,15 @@ form {
 
 /* Efecto al enfocar los inputs */
 .container input:focus {
-    border-color: #FF7F50;
-    box-shadow: 0 0 8px rgba(255, 127, 80, 0.5);
+    border-color: #D17B0F;
+    box-shadow: 0 0 8px rgba(209, 123, 15, 0.5);
 }
 
 /* Botón */
 .container button {
     border: none;
     border-radius: 6px;
-    background: #FF7F50; /* Coral */
+    background: #D17B0F; /* Naranja cálido */
     padding: 10px;
     font-size: 18px;
     font-weight: 600;
@@ -93,7 +95,7 @@ form {
 
 /* Efecto hover en botón */
 .container button:hover {
-    background: #E66A3D; /* Coral más oscuro */
+    background: #B3670B; /* Naranja más oscuro */
     transform: scale(1.05);
 }
 
@@ -106,16 +108,17 @@ footer {
     position: fixed;
     bottom: 0;
 }
+
 </style>
 
 <body>
     <div class="container">
-        <p class="title">Army Corps form</p>
+        <p class="title">Companies form</p>
 
-        <p class="paragraph">Enter in the army corps's name:</p>
-        <form action="{{route('corp.saved')}}" method="POST" enctype="multipart/form-data">
+        <p class="paragraph">Enter in the company activity:</p>
+        <form action="{{route('company.saved')}}" method="POST" enctype="multipart/form-data">
             @csrf
-            <input type="text" name="designation" placeholder="Designation..." required>
+            <input type="text" name="activity" placeholder="company activity..." required>
             <button type="submit">send</button>
         </form>
     </div>
