@@ -12,4 +12,8 @@ class CuerpoEjercitoMo extends Model
     protected $table = 'corps_e'; // Si la tabla tiene otro nombre en la BD ,Laravel asume que la tabla se llama igual que el modelo, pero en plural
 
     protected $fillable = ['designation'];
+
+    function soldiers (){
+        return $this -> hasMany(Soldier::class);
+    }
 }
